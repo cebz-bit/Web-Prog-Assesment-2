@@ -1,0 +1,279 @@
+body {
+  font-weight: 600;  /* thicc text */
+}
+
+body {
+    background-image: url('kingdom\ img\ 4.webp'); /* image path */
+    background-size: cover; /* to make sure the image covers the entire screen */
+    background-position: center; /* to center the background image */
+    background-attachment: fixed; /* makes it so the background stays even while scrolling omg :0 */
+    background-repeat: no-repeat; /* prevents the background from repeating ig */
+    color: #333; /* color to make sure the text is readable */
+    font-family: Arial, sans-serif; /* font selection for the text becuz why not duhh */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* makes sure the body takes up the full height of the viewport */
+    overflow-x: hidden; /*prevents horizontal scrolling*/
+    padding-left: 15px; /*makes it so that the text doesn't hug the screen*/
+    padding-right: 5px; /*vice versa for rightside of the screen*/
+    display: flex;
+    flex-direction: column; /*makes it so that the last body of content in the webpage isn't awkwardly hugging the end of the screen*/ 
+}
+
+/*line of code to change the opacity and overlay of the background*/
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('kingdom\ img\ 4.webp'); /* Make sure the path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(6px); /* blur strength */
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* optional white overlay */
+    z-index: -1;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  background:transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Fixed box-shadow */
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 2em;
+  background-color: rgba(25, 25, 25, 0.9);
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+.nav-links a {
+  font-weight: 700;     /* Makes the font thicker (bold) */
+  color: #000000;       /* Pure black for dark text */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Optional: subtle shadow for extra contrast */
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #6b6a6a3d, #03030300);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: rgb(0, 0, 0);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background:transparent;
+}
+  
+.overview-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 75%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.7; /* optional, to match your aesthetic */
+}
+ 
+#Quick-Info p {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+#Quick-Info img {
+  margin-left: 10px; /* Add space between text and image */
+}
+
+#Quick-Info img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#Quick-Info img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+}
+
+/* Logo styles */
+.logo-container img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+
+}
+
+/* Character styles */
+.Characters {
+  display: flex;
+  flex-direction: column; /* Stack character entries vertically */
+}
+
+.character {
+  display: flex; /* Use flexbox for each character entry */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Space between character entries */
+  background-color:#000000;
+  border:transparent;
+  margin-right: 15px;
+  margin-left:15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.characters-img:hover{
+  transform: scale(1.1); /* Scale up the image on hover */
+  filter: brightness(1.1) drop-shadow(0 4px 10px rgb(0, 0, 0)); /* Brighten and add drop shadow */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+/* Container for characters grid: two columns */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 10px 0;
+}
+
+/* Each character’s entry aligned horizontally with image and info side by side *
+
+/* Character images styling */
+.characters-img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Text container max width for better readability */
+.character-info {
+  max-width: 600px;
+}
+/* Container for Cast members as a two-column grid */
+.cast-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 10px 0;
+}
+
+/* Each cast member’s text and image aligned horizontally */
+.cast-member {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviews-container img {
+  max-width: 75%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.reviews-container img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+}
+
+.socials-container {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;     /* center the images horizontally */
+  gap: 30px;               /* space between images */
+  padding: 20px 0;
+}
+
+.socials-container img {
+  max-width: 100px; /* adjust as needed */
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socials-container img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+}
+
+.qin-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 75%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.7; /* optional, to match your aesthetic */
+  filter:none
+}
